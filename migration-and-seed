@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $DATABASE_URL ]]; then
+  node_modules/.bin/sequelize db:migrate --url $DATABASE_URL
+  node_modules/.bin/sequelize db:seed:all --url $DATABASE_URL
+else
+  node_modules/.bin/sequelize db:migrate
+  node_modules/.bin/sequelize db:seed:all
+fi
+
+echo "Migration and seed done."

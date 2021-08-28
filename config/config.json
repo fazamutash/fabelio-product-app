@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "fabelio_db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": "5432"
+  }
+}
