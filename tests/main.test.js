@@ -12,7 +12,7 @@ describe('Fabelio test', () => {
       uri: BASE + '/api',
     };
     try {
-      let res = await request(options)
+      let res = await request(options);
       res = JSON.parse(res);
       return expect(res.message).to.equal('Database has been seeded with Meja Tamu Chloe - Set of 3.');
     } catch (err) {
