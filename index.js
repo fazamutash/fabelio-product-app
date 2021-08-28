@@ -26,16 +26,19 @@ app.use('/api', apiRoutes);
 
 // global error handler
 app.use(errorHandler);
-app.get("/", async (req, res) => {
+app.get("/api", async (req, res) => {
   try {
     const product = await Product.findOne({ where: { id: 1 }});
-    console.log(product)
     const response = { message: `Database has been seeded with ${product.name}.` };
     res.send(response);
   } catch (error) {
     console.log(error);
     res.status(422).send(error);
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 app.listen(PORT, () => console.log("The node.js app is listening on port 5000."));

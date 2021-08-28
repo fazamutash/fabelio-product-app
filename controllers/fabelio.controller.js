@@ -21,7 +21,6 @@ fabelio.submit = async function (req, res) {
   if (!req.body.link.includes("fabelio.com/ip/")) return res.status(400).send({message: "Validation error: \"link\" is not a fabelio product"});
   try {
     const link = req.body.link;
-    console.log(link)
     const product = await fabelioService.create(link);
     return res.json({product});
   } catch (error) {

@@ -9,7 +9,7 @@ describe('Fabelio test', () => {
   it('Should load seed data', async () => {
     const options = {
       method: 'GET',
-      uri: BASE,
+      uri: BASE + '/api',
     };
     try {
       let res = await request(options)
