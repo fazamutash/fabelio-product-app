@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "heroku-postbuild": "./migration-and-seed && cd client && npm install && npm run build",
+    "heroku-postbuild": "chmod +x ./migration-and-seed && ./migration-and-seed && cd client && npm install && npm run build",
     "test": "_mocha './tests/*.test.js'"
   },
   "author": "",
